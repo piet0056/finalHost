@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="Group 12" content="Sam Spietersma, Zhongjie Zhang, Elena Khrychenkova">
+    <title>Vintage Cinema Theater</title>
+    <link rel="stylesheet" type="text/css" href="CSS\pageBottom.css">
+    <link rel="stylesheet" type="text/css" href="CSS\main.css">
+    <link rel="stylesheet" type="text/css" href="CSS\movieGridCss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="Scripts/jquery-3.6.1.min.js"></script>
+    <script src="Scripts/api.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+</head>
+
+<body class="inDark">
+    <div id="bg" class="art-bg-stripes-dark">
+        <div id="loadingImage">
+            <div id="welcomeBox" class="text-center vw-100">
+                <div class=welcomeMessage class="position-absolute top-50 start-50 translate-middle" id="messager1">
+                    Welcome To</div>
+                <div class=welcomeMessage id="messager2"> All Retro Theme Cinema</div>
+            </div>
+        </div>
+        <nav class="navbar shadow-lg sticky-top navbar-dark bg-dark">
+            <div class="container position-relative">
+                <div class="row w-100">
+                    <div class="col">
+                        <a class="nav-link text-light btn" onclick="scrollToLogo(scrollToHere.id)"> Tickets </a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link text-light  btn" onclick="scrollToLogo(comingSoonScrollStopper.id)"> Coming
+                            Soon </a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link  text-light btn" onclick="scrollToLogo(aboutUsScrollStopper.id)"> About Us
+                        </a>
+                    </div>
+
+                    <div class="col-1 position-relative">
+                        <div class="iconContainerL">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi icon1 position-absolute bi-brightness-high" viewBox="0 0 16 16">
+                                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                              </svg>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input bg-light" type="checkbox" role="switch"
+                                id="flexSwitchCheckChecked" checked>
+                        </div>
+                        <div class="iconContainerR">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi icon1 position-absolute bi-moon" viewBox="0 0 16 16">
+                                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                              </svg>
+                        </div>
+                    </div>
+
+
+                    <a> <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" id="navUser"
+                            class="bi btn position-absolute top-50 start-100 translate-middle-y bi-person-circle"
+                            viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg> </a>
+                </div>
+            </div>
+        </nav>
+        <div id="overlay0" class="currentoverlay" onmouseleave="hideMoviePopup(), resetOpacity()">
+            <div id="overlayMovieTitle"> Description </div>
+            <div id="overlayMovieCast"> Cast </div>
+            <div id="currentMovieID"></div>
+            <div> Showtimes
+                <div><button id="nosferatuTicket">10pm</button></div>
+                <div><a href="ticketPurchase.html"><button>Click Me</button></a></div>
+            </div>
+        </div>
+
+        <div id="scrollToHere" class="p-4"></div>
+        <div id="currentMovieHeader" class="h1 text-light m-4"> Now Playing </div>
+        <div id="nowPlaying">
+            <div class="container">
+                <div class="row gy-5  nowPlayingRow">
+
+                    <!-- Movie 1 -->
+
+                    <div class="col">
+                        <div class="currentMovie card text-bg-dark w-75" onmouseover="fadeOtherMovies(this.id)">
+                            <input class="movieIDHolder" id="movieIDHolder0" value="Hello" hidden></input>
+                            <img id="movie0" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie1Collapse">
+                                Buy Tickets
+                            </button>
+                            <div class="collapse w-100" id="movie1Collapse">
+                                <div class="card card-body text-bg-dark text-center">
+                                    <input class="movieTitleHolder card-text fs-4 bg-dark text-light text-center"
+                                        id="movieTitleHolder0" value="Hello"></input>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        10:00 PM
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        11:40 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 2 -->
+
+
+                    <div class="col">
+                        <div id="main1" class="currentMovie card text-bg-dark w-75"
+                            onmouseover="fadeOtherMovies(this.id)">
+                            <input class="movieIDHolder" id="movieIDHolder1" value="Hello" hidden></input>
+                            <img id="movie1" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie2Collapse">
+                                Buy Tickets
+                            </button>
+                        </div>
+                        <div class="collapse w-75" id="movie2Collapse">
+                            <div class="card card-body text-bg-dark text-center">
+                                <input class="movieTitleHolder card-text fs-4 bg-dark text-light text-center"
+                                    id="movieTitleHolder1" value="Hello"></input>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                        <path
+                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                    </svg>
+                                </div>
+                                <div class="timeOfMovie">
+                                    10:00 PM
+                                </div>
+                                <div class="timeOfMovie">
+                                    11:40 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 3 -->
+
+
+                    <div class="col">
+
+                        <div id="main2" class="currentMovie card text-bg-dark w-75 "
+                            onmouseover="fadeOtherMovies(this.id)">
+
+                            <input class="movieIDHolder" id="movieIDHolder2" value="Hello" hidden></input>
+                            <img id="movie2" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie3Collapse">
+                                Buy Tickets
+                            </button>
+                        </div>
+                        <div class="collapse w-75" id="movie3Collapse">
+                            <div class="card card-body text-center text-bg-dark">
+                                <input class="movieTitleHolder card-text fs-4 bg-dark text-light text-center"
+                                    id="movieTitleHolder2" value="Hello">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                        <path
+                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                    </svg>
+                                </div>
+                                <div class="timeOfMovie">
+                                    9:00 PM
+                                </div>
+                                <div class="timeOfMovie">
+                                    10:25 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gy-5">
+
+                    <!-- Movie 4 -->
+
+
+                    <div class="col">
+                        <div id="main3" class="currentMovie card w-75 text-bg-dark"
+                            onmouseover="fadeOtherMovies(this.id)">
+                            <input class="movieIDHolder" id="movieIDHolder3" value="Hello" hidden></input>
+                            <img id="movie3" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie4Collapse">
+                                Buy Tickets
+                            </button>
+                            <div class="collapse w-100" id="movie4Collapse">
+                                <div class="card card-body text-center text-bg-dark">
+                                    <input class="movieTitleHolder card-text fs-4 bg-dark text-light text-center"
+                                        id="movieTitleHolder3" value="Hello">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        10:00 PM
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        11:40 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 5 -->
+
+
+                    <div class="col">
+
+                        <div id="main4" class="currentMovie card w-75 text-bg-dark"
+                            onmouseover="fadeOtherMovies(this.id)">
+
+                            <input class="movieIDHolder" id="movieIDHolder4" value="Hello" hidden></input>
+                            <img id="movie4" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie5Collapse">
+                                Buy Tickets
+                            </button>
+                            <div class="collapse w-100" id="movie5Collapse">
+                                <div class="card card-body text-center text-bg-dark">
+                                    <input class="movieTitleHolder card-text fs-4 bg-dark text-light text-center"
+                                        id="movieTitleHolder4" value="Hello">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        10:00 PM
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        11:40 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 6 -->
+
+
+                    <div class="col">
+
+                        <div id="main5" class="currentMovie card  text-bg-dark w-75"
+                            onmouseover="fadeOtherMovies(this.id)">
+
+                            <input class="movieIDHolder" id="movieIDHolder5" value="Hello" hidden></input>
+                            <img id="movie5" class="card-img-top">
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#movie6Collapse">
+                                Buy Tickets
+                            </button>
+                            <div class="collapse w-100" id="movie6Collapse">
+                                <div class="card card-body text-center text-bg-dark">
+                                    <input class="movieTitleHolder card-text fs-5 bg-dark text-light text-center"
+                                        id="movieTitleHolder5" value="Hello">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        10:00 PM
+                                    </div>
+                                    <div class="timeOfMovie">
+                                        11:40 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="comingSoonScrollStopper" class="p-4 mb-4"></div>
+        <div id="currentMovieHeader" class="h1 text-light"> Coming Soon </div>
+        <div id="comingSoon">
+            <div id="comingSoonMoviesGrid">
+                <div class="upcomingMovie mt-5" id="upcoming1" class="upcomingMovie"> </div> <span
+                    class="text-light fs-4 "> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et
+                    dolore
+                    magna aliqua. Quam quisque id diam vel quam elementum pulvinar etiam non. Laoreet sit amet cursus
+                    sit
+                    amet</span>
+                <div class="upcomingMovie" id="upcoming2" class="upcomingMovie"> </div>
+                <span class="text-light fs-4 "> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et
+                    dolore
+                    magna aliqua. Quam quisque id diam vel quam elementum pulvinar etiam non. Laoreet sit amet cursus
+                    sit
+                    amet</span>
+                <div class="upcomingMovie" id="upcoming3" class="upcomingMovie"> </div>
+                <span class="text-light fs-4 "> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et
+                    dolore
+                    magna aliqua. Quam quisque id diam vel quam elementum pulvinar etiam non. Laoreet sit amet cursus
+                    sit
+                    amet</span>
+            </div>
+        </div>
+        <div id="aboutUsScrollStopper" class="p-5"></div>
+        <div id="currentMovieHeader" class="h1 text-light"> About Us </div>
+        <div id="aboutUs">
+            <div id="aboutUsText" class="text-light text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Quam quisque id diam vel quam elementum pulvinar etiam non. Laoreet sit amet cursus sit
+                amet
+                dictum sit amet. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Vel
+                facilisis
+                volutpat est velit egestas dui. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit.
+                Libero
+                id
+                faucibus nisl tincidunt. Pellentesque adipiscing commodo elit at imperdiet dui. Gravida dictum fusce ut
+                placerat
+                orci nulla pellentesque. Varius duis at consectetur lorem donec massa sapien faucibus et. Massa vitae
+                tortor
+                condimentum lacinia quis vel eros donec. Arcu vitae elementum curabitur vitae nunc.
+
+                Vitae turpis massa sed elementum tempus egestas. Non pulvinar neque laoreet suspendisse. Purus faucibus
+                ornare
+                suspendisse sed nisi lacus sed viverra tellus. Nisi lacus sed viverra tellus. Volutpat commodo sed
+                egestas
+                egestas fringilla phasellus faucibus scelerisque. Quam adipiscing vitae proin sagittis nisl rhoncus
+                mattis
+                rhoncus. Turpis massa tincidunt dui ut ornare. Sodales ut etiam sit amet. Dignissim suspendisse in est
+                ante
+                in
+                nibh mauris cursus mattis. Ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra
+                vitae
+                congue eu.
+            </div>
+        </div>
+        <div id="currentMovieHeader" class="h1 text-light"> Our Location </div>
+        <div id="mapContainer">
+            <iframe width="900px" height="450" style="border:0" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA5jFyPq9l90viqBdY0k7ojj-xC84Ofl9o
+              &q=Belvedere+Palace,Vienna+AS">
+            </iframe>
+        </div>
+    </div>
+</body>
+<script src="Scripts/darkMode.js"></script>
+<script src="Scripts/headerScript.js"></script>
+<script src="Scripts/moviePosters.js"></script>
+<script src="Scripts/upcoming.js"></script>
+
+</html>

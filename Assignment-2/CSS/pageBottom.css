@@ -1,0 +1,16 @@
+#mapContainer{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+
+#aboutUs{
+    display: flex;
+    justify-content: center;
+}
+#aboutUsText{
+    width: 70vw;
+    font-size: 22pt;
+    margin-bottom: 10vh;
+}

@@ -1,0 +1,25 @@
+body{
+    background-color: #6b6d6e;
+    background: repeating-linear-gradient(45deg, #0a070a, #07090A 20px, #2f3031 20px, #2f3031 55px);
+}
+
+#checkoutForm{
+    width: 50vw;
+    
+}
+#ticketQuant{
+ width: 100%;
+ color: aliceblue;
+ background-color: #2f3031;
+}
+
+#loginDiv{
+    display: none;
+    position: absolute;
+    width: 50vw;
+    min-height: 400px;
+    height: 50vh;
+    z-index: 2;
+    top: 20%;
+    left: 25%;
+}

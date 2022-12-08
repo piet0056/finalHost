@@ -1,0 +1,237 @@
+:root {
+    color-scheme: dark;
+}
+
+#bg{
+    background-color: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+table {
+    border: 1px;
+    border-collapse: collapse; 
+    margin: 0 auto;  
+    padding: 0px;
+    table-layout: fixed;
+    min-width: 100%;
+}
+
+#loadingImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loadingImageImage{
+    object-fit: fill;   
+}
+
+table th {
+    text-align: center;
+    padding: 8px;
+    border: 1px;
+    background:#000000;
+    color:#FFFFFF;
+    font-weight:bold;
+    text-align:center
+}
+
+table td {
+    padding: 8px;
+    border: 1px;
+}
+
+table tr {
+    background-color: #000000;
+    color:#FFFFFF;
+    text-align:center;
+}
+
+table .mobile-head {
+    display:none;
+}
+
+table .show-on-mobile {
+    display:none;
+}
+
+@media screen and (max-width: 600px) {
+table {
+    border: 1px;
+    border-collapse: collapse; 
+    margin: 0 auto;  
+    padding: 0px;
+    table-layout: fixed;
+    min-width: 100%;
+}
+table td {
+    padding: 8px; 
+    border: 1px;
+    display: block;
+    text-align: right;
+    width: 100%\9;  
+    float: left\9;
+}
+table tr {
+    background-color: #000000;
+    color:#FFFFFF;
+    text-align:right;
+    margin:8px}
+
+    table tr:first-child {
+        display:none;
+    }
+table tr {
+    display: block;
+}
+
+table td:not(:first-child) { 
+    border-top:0px;
+}
+table .mobile-head {
+    font-weight:bold;
+    color:#000000;
+    float:left;
+    text-align:left;
+    display:block
+}
+table .show-on-mobile {
+    display:block;
+}
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;   
+}
+
+nav {
+    border-style: double;
+    border: 4px;
+    border-color: white;
+    text-align:center;
+    font-size: 18pt;
+    padding: 30px;
+    background-color: black;
+    color: white;
+}
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+ }
+
+nav a:hover {
+    color: grey;
+  }
+  
+.navigation {
+    font-family: 'IM Fell DW Pica', serif;
+    border: 4px solid white;
+    
+} 
+
+h1 {
+    font-family: 'IM Fell DW Pica', serif;
+    border: 4px solid white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+#wizard {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#poster1 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 150px;
+    padding-inline-start: 150px;
+}
+
+#poster2 {
+    width: 220px;
+    height: 200px;
+    margin-left: 50%
+}
+
+#poster3 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 100px;
+    padding-inline-start: 100px;
+}
+
+#poster4 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 150px;
+    padding-inline-start: 150px;
+}
+
+#poster5 {
+    width: 220px;
+    height: 200px;
+    margin-left: 50%;
+}
+
+#poster6 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 100px;
+    padding-inline-start: 100px;
+}
+
+#poster7 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 100px;
+    padding-inline-start: 100px;
+}
+
+#poster8 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 100px;
+    padding-inline-start: 100px;
+}
+
+#poster9 {
+    width: 150px;
+    height: 220px;
+    padding-inline-end: 100px;
+    padding-inline-start: 100px;
+}
+
+#insidephoto {
+    border-radius: 20px;
+    float: left;
+    padding: 20px 20px 20px;
+}
+
+.textaboutus {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 20px;
+    padding: 20px 20px 20px;
+}
+
+#logoFooter {
+    margin-left: 70%;
+}
+
+.flex-container {
+    display: flex;
+    margin-left: 70%;
+}

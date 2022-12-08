@@ -1,0 +1,112 @@
+:root {
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'IM Fell DW Pica', serif;
+}
+
+#bg{
+    background: repeating-linear-gradient(45deg, #07090A, #07090A 20px, #1a1b1c 20px, #1a1b1c 55px);
+    height: 100%;
+    width: 100%;
+}
+
+#navUser{
+    fill: #9C9E9F
+}
+
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;   
+}
+
+.iconContainerL{
+    position: absolute;
+    padding-right: 40%;
+    right: 70%;
+    top: 30%;
+}
+.iconContainerR{
+    position: absolute;
+    padding-left: 40%;
+    left: 24%;
+    top: 26%;
+}
+
+#loadingImage{
+    display: flex;
+    background-image: url("../images/theaterInterior.jpg");
+    background-size: 320vh;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 95vh;
+
+}
+#loadingImage::after{
+    background-image: linear-gradient(to bottom, black, white);
+}
+#loadingImageImage{
+    width: 220vh;
+    filter:grayscale(100%);
+
+}
+.welcomeMessage{
+    z-index: 2;
+    font-size: 8vw;
+}
+#welcomeBox{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+
+}
+
+.h1{
+    font-family: 'IM Fell DW Pica'
+}
+#messager1, #messager2{
+    color:#A9AAAC;
+    display: none;
+    opacity: 1;
+}
+#messager2{
+    font-size: 5vw;
+    font-style: italic;
+}
+#welcomeButton{
+    width: 33.3vw;
+    height: 2vw;
+    font-size: 15pt;
+    transition: 0.5s;
+    z-index: 0;
+}
+#welcomeButton:hover{
+    background-color: azure;
+}
+#navFlex{
+    width: 100vw;
+    display: flex;
+    position: sticky;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    z-index: 4;
+}
+nav {
+    border-color: white;
+    text-align:center;
+    font-size: 18pt;
+    padding: 30px;
+    background-color: black;
+    color: white;
+}
+

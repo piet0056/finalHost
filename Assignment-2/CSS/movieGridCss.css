@@ -1,0 +1,62 @@
+#currentMoviesGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vh;
+    justify-items: center;
+    width: 70vw;
+}
+
+.currentMovie{
+
+    width: 50%;
+    opacity: 100%;
+    transition: 0.5s;
+}
+.currentMovie:hover{
+    width: 50%;
+    z-index: 1;
+}
+.nowPlayingRow{
+    margin-bottom: 10vh;
+}
+.currentMovie:after{
+    opacity: 30%;
+}
+#currentMovieHeader{
+    font-size: 8vw;
+    text-align: center;
+}
+#nowPlaying{
+    width: 100vw;
+
+}
+.movieTitleHolder{
+    border-style: none;
+}
+#comingSoon{
+    display: flex;
+    justify-content: center;
+}
+
+#comingSoonMoviesGrid{
+    display: grid;
+    row-gap: 10vh;
+    justify-items: center;
+    width: 70%;
+}
+#upcomingIMG1, #upcomingIMG2, #upcomingIMG3{
+    width: 10vw
+}
+.currentoverlay{
+    position: absolute;
+    color:#A9AAAC;
+     height: 23vh;
+     width: 10vw;
+        background-color: black;
+      margin-left: -80px;
+      opacity: 0;
+      transition: 0.25s;
+}
+.currentoverlay:hover{
+    opacity: 70;
+}

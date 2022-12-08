@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/purchaseScreen.css">
+    <script src="Scripts/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <title>Checkout</title>
+</head>
+
+
+
+<body class="vh-100">
+    <div id="loginDiv">
+        <div class="card bg-dark card-body w-100 h-100">
+            <h3 class="text-light"> Create Account </h3>
+            <form class="text-light" id="createAccount">
+                <label for="fnameInput" class="form-label text-light"> First Name
+                </label>
+                <input type="text" class="form-control form1" id="fnameInput1">
+                <label for="lnameInput" class="form-label text-light"> Last Name </label>
+                <input type="text" class="form-control form1" id="lnameInput1">
+                <label for="emailInput" class="form-label text-light">Email
+                    Address</label>
+                <input type="email" class="form-control form1" id="emailInput1">
+                <label for="creditCard" class="form-label text-light"> Credit Card
+                </label>
+                <input id="creditCard1" class="input-credit-card form-control"
+                    placeholder="xxxx-xxxx-xxxx-xxxx" type="tel" />
+                <input type="submit" class="btn text-light" value="Create Account"> 
+            </form>
+        </div>
+    </div>
+        </div>
+        <div class="vw-75 h-100" id="mainCheckoutDiv">
+            <div class="container-xl bg-dark text-light vw-75 d-flex flex-row align-items-center" style="height: 85vh;">
+                <span class="position-relative top-0 translate-middle"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="64" height="64" fill="currentColor" class="btn bi bi-arrow-left-circle"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg> </span>
+                <form class="vw-50  needs-validation m-5" id="loginForm" novalidate>
+                    <div class="text-light display-2 mb-2 text-end w-100"> Sign In</div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="emailInput" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="emailInput" required>
+                            <div class="invalid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                            <input type="submit" class="form-control mt-3" id="submit" value="Sign In">
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-10">
+                            <h2>Don't have an account?</h2>
+                            <div class="row">
+                                <div class="col"><a class="btn btn-dark text-start-0" data-bs-toggle="collapse"
+                                        href="#collapseExample" role="button" id="createAccountBtn"> Create One Now </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><span class="small p-3"><em>or continue as a Guest</em></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form class="vw-50 m-5" id="checkoutForm" style="display: none;">
+                    <div id="userName" class="display-2"> </div>
+                    <hr />
+                    <div class="h2 mb-4"> <u> Order Details </u></div>
+                    <div id="movieTitle" class="h5"></div>
+                    <div id="movieTime" class="mb-4"> </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <select class="form-select" id="ticketQuant">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <div class="col-auto pt-1">
+                                <span class="">x $9.99 </span>
+                            </div>
+                            <div class="col-auto pt-1" id="subTotal">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-auto">
+                                <input type="checkbox" id="savedPaymentCheck" data-bs-toggle="collapse"
+                                    href="#collapsable">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-credit-card" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                                </svg> Use Saved Payment Method
+                                <div id="collapsable" class="collapse">
+                                    <span>
+                                        <select id="savedMethods" class="form-control">
+                                            <option selected> </option>
+                                            <option value="1"> **** **** **** **24 (**/26)</option>
+                                            <option value="2"> **** **** **** **90 (**/22) </option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-5">
+                                <input type="checkbox" id="newPaymentCheck" data-bs-toggle="collapse"
+                                    href="#newPaymentCollapse"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                                </svg>Enter New Payment Method
+                                <div id="newPaymentCollapse" class="collapse">
+                                    <input id="creditCard" class="input-credit-card-1 form-control"
+                                        placeholder="xxxx-xxxx-xxxx-xxxx" type="tel" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-4">
+                    <button id="placeOrder" class="btn bg-light"> Place Order </button>
+                </div>
+                <div class="card m-5" style="max-width: 20vw;">
+                    <img id="orderImage" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text text-dark text-center h1" id="cardText">If you're seeing this, something has
+                            gone
+                            wrong.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="Scripts/checkout.js"></script>
+
+</html>
