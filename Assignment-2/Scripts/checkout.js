@@ -3,11 +3,11 @@
 
 TODO
 
-sleep more
-form valid
-spawning popup
-moving user creation to local storage
-functioning out the cookie search?
+sleep more--ha
+form valid--meh
+spawning popup--done
+moving user creation to local storage--done
+functioning out the cookie search?--not in a month of sundays
 
 */
 var ID = sessionStorage.getItem("movieID");
@@ -77,27 +77,7 @@ $("#ticketQuant").change(function(){
   $("#subTotal").text("$" + $("#ticketQuant").val() * 9.99);
 })
 
-$(document).ready(function(){
-  const usernameCookie = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('currentLoggedInUserName='))
-  ?.split('=')[1];
-  if(usernameCookie){
-    $("#userName").text("Welcome,       " + usernameCookie);
-    //document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
-  }
 
-  const loginCookieValue = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('loggedIn='))
-  ?.split('=')[1];
-  if(loginCookieValue == "true"){
-    $("#loginForm").css("display", "none")
-    $("#checkoutForm").css("display", "block")
-    //document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
-  }
-
-})
 
 $("#placeOrder").click(function(){
   let subj = 'Your Receipt From ART Cinema Order ID ' + (Math.random() + 1) * 317653;
@@ -124,4 +104,91 @@ $("#createAccountBtn").click(function(){
   $("#mainCheckoutDiv").css("display", "none")
 })
 
+
+$(document).ready(function(){
+  const usernameCookie = document.cookie
+  .split('; ')
+  .find((row) => row.startsWith('currentLoggedInUserName='))
+  ?.split('=')[1];
+  if(usernameCookie){
+    $("#userName").text("Welcome,       " + usernameCookie);
+    //document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
+  }
+
+  const loginCookieValue = document.cookie
+  .split('; ')
+  .find((row) => row.startsWith('loggedIn='))
+  ?.split('=')[1];
+  if(loginCookieValue == "true"){
+    $("#loginForm").css("display", "none")
+    $("#checkoutForm").css("display", "block")
+    //document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
+  }
+
+})
+
+$(document).ready(function(){
+
+  const loginCookieValue = document.cookie
+  .split('; ')
+  .find((row) => row.startsWith('current-mode='))
+  ?.split('=')[1];
+
+
+  if(loginCookieValue == "light")
+  {
+      $(".bg-dark").each(function(){
+          $(this).removeClass("bg-dark");
+          $(this).addClass("bg-light");
+      })
+  
+      $(".text-light").each(function(){
+          $(this).removeClass("text-light");
+          $(this).addClass("text-dark");
+      })
+      
+      $(".text-bg-dark").each(function(){
+          $(this).removeClass("text-bg-dark");
+          $(this).addClass("text-bg-light");
+      })
+  
+      $(".btn-dark").each(function(){
+          $(this).removeClass("btn-dark");
+          $(this).addClass("btn-light");
+      })
+      
+      $(".icon1").each(function(){
+          $(this).css("fill", "#000000")
+      })
+
+      $("body").css("background", "repeating-linear-gradient(90deg, #CECECE, #CECECE 50px, #fff 50px, #fff 55px)")
+  }
+  else{
+
+      $(".bg-light").each(function(){
+          $(this).removeClass("bg-light");
+          $(this).addClass("bg-dark");
+      })
+  
+      $(".text-dark").each(function(){
+          $(this).removeClass("text-dark");
+          $(this).addClass("text-light");
+      })
+      
+      $(".text-bg-light").each(function(){
+          $(this).removeClass("text-bg-light");
+          $(this).addClass("text-bg-dark");
+      })
+  
+      $(".btn-light").each(function(){
+          $(this).removeClass("btn-light");
+          $(this).addClass("btn-dark");
+      })
+      $(".icon1").each(function(){
+          $(this).css("fill", "#fff")
+      })
+      $("body").addClass("inDark")
+      $("body").css("background", "repeating-linear-gradient(45deg, #07090A, #07090A 20px, #1a1b1c 20px, #1a1b1c 55px)")
+  }
+})
 createOrder(ID);

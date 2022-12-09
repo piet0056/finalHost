@@ -49,6 +49,7 @@ body{
     width: 100vw;
     height: 95vh;
 
+
 }
 #loadingImage::after{
     background-image: linear-gradient(to bottom, black, white);

@@ -2,8 +2,17 @@
 
 
 function toDarkMode(){
-    if($("body").hasClass("inDark"))
+
+    const modeCookieValue = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith('current-mode='))
+    ?.split('=')[1];
+  
+    if(modeCookieValue == "dark")
     {
+
+        document.cookie = "current-mode = light";
+
         $(".bg-dark").each(function(){
             $(this).removeClass("bg-dark");
             $(this).addClass("bg-light");
@@ -33,6 +42,8 @@ function toDarkMode(){
     }
     else{
 
+        document.cookie = "current-mode = dark";
+
         $(".bg-light").each(function(){
             $(this).removeClass("bg-light");
             $(this).addClass("bg-dark");
@@ -61,6 +72,13 @@ function toDarkMode(){
 
     
 }
+
+
+$(document).ready(function(){
+    $("#flexSwitchCheckChecked").prop("checked", true)
+    $("#flexSwitchCheckChecked").addClass("bg-dark")
+    document.cookie = "current-mode = dark";
+})
 
 
 $("#flexSwitchCheckChecked").change(function(){
