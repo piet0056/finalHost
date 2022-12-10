@@ -16,7 +16,9 @@ body{
 }
 
 #navUser{
-    fill: #9C9E9F
+    fill: #9C9E9F;
+    position: absolute;
+    padding-top: 3.5%;
 }
 
 

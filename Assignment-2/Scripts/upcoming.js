@@ -1,4 +1,12 @@
 
+
+// 
+// Code By Sam Pietersma
+//
+
+
+
+
 $(document).ready(function(){
     for(var i = 1; i < 4; i++){
         createUpcoming(i);

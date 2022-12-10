@@ -31,10 +31,11 @@ body{
 }
 #loginDiv{
     display: none;
+    position: absolute;
     width: 50vw;
     min-height: 400px;
-    height: 70vh;
+    height: 40vh;
     z-index: 2;
-    top: 20%;
+    top: 10%;
     left: 25%;
 }
